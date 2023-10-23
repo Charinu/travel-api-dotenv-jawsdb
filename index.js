@@ -22,4 +22,15 @@ app.get('/attractions',(req,res)=> {
     )
 })
 
+
+app.get('/users',(req,res)=> {
+    connection.query(
+        'SELECT * FROM users',
+        function(err, results, fields) {
+            res.send(results)
+        }
+    )
+})
+
+
 app.listen(process.env.PORT || 3000)
